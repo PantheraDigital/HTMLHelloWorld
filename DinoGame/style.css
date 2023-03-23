@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.game {
+    width: 600px;
+    height: 200px;
+    border: 2px solid #000000;
+    box-shadow: 1px 2px 5px#000000;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+#score{
+    position: absolute;
+    top: 1ch;
+    left: 1ch;
+}
+#dino {
+    width: 50px;
+    height: 70px;
+    background-color: grey;
+    background-size: auto 50px;
+    border: solid grey;
+    box-sizing: border-box;
+    position: relative; 
+    top: 130px;
+    left: 1ch;
+    transition: transform 0.5s;
+}
+.jump {
+    animation: jump 0.5s linear;
+}
+@keyframes jump {
+    0%{
+        transform: translate3d(0px,0px,0px);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        transform: translate3d(0px,-80px,0px);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform: translate3d(0px,0px,0px);
+        
+    }
+}
+#cactus {
+    width: 20px;
+    height: 40px;
+    position: relative;
+    top: 90px;
+    left: 580px;
+    background-color: red;
+    background-size: 20px 40px;
+    animation: cactus-block 1.5s linear;
+    transition: transform 2s;
+}
+@keyframes cactus-block {
+    0% {
+        left: 580px;
+    }
+    100% {
+        left: -1px;
+    }
+}
