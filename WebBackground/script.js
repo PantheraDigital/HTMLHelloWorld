@@ -10,19 +10,22 @@ window.onresize = loadShapes;
 //
 //shapes
 //
+
 //---design variables
 //edit shapeStyleList string to set the shape or shapes
 // seperate each shape class with a space
 var shapeStyleList = "arrow-up arrow-down".trim().split(" ");
 //the offset of every even row
-// us to offset the vertical alignment of shapes
+// us to add padding to the begining of the row to offset the alignment of shapes vertically
 var rowOffset = 0
 //---
+
 var prevRowBeginingStyleIndex = 0;
 function loadShapes(){
     addShapeRows("shape-list");
     let listChildCount = Number(document.getElementById("shape-list").childElementCount);
     for(let i = 0; i < listChildCount; i++){
+        //---this function populates rows with shapes. the ending argument determins if the first shape in the row will match the first shape in the row before it
         fillRowWithShape(("shape-row_" + i.toString()), shapeStyleList, true);
     }
     if(rowOffset > 0){
@@ -107,6 +110,8 @@ function offsetRows(pxValue, listID){
 //
 //mouse
 //
+
+//---attach mouse-tracker element to mouse
 var mouseGradient = document.getElementById("mouse-tracker");
 const onMouseMove = (event) =>{
     if(mouseGradient){
@@ -116,6 +121,7 @@ const onMouseMove = (event) =>{
 }
 document.addEventListener('mousemove', onMouseMove);
 
+//---assign ripple effect on click
 //document.getElementById("repeatingShapeBackground").addEventListener("click", createRipple);
 function createRipple(event) {
     let element = event.currentTarget;
